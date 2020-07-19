@@ -54,7 +54,10 @@ const cardArray = [
   }
 ]
 
+
+
 const grid = document.querySelector('.grid')
+const resultDisplay = document.querySelector('#result')
 var cardChosen = []
 var cardsChosen = []
 var cardsWon = []
@@ -88,7 +91,10 @@ function checkForMatch(){
 
   cardsChosen = []
   cardsChosenId = []
-
+  resultDisplay.textContent = cardsWon.length
+  if (cardsWon.length === cardArray.length/2) {
+    resultDisplay.textContent = 'Congratulations! you found them all'
+  }
 }
 //flip your card
 function flipCard(){
